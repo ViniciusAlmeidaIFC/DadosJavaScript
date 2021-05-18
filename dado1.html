@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Jogo dos Dados</title>
+ <script>
+  var dado = new Array();
+  var somaUsuario = 0;
+  var somaCpu = 0;
+  var valores ; 
+  
+  
+  function iniciar()
+  {
+   var button = document.getElementById( "rolar" );
+   button.addEventListener( "click", rolar, false );
+   document.getElementById( "dado" ).src = dado[];
+  }
+
+function setImage( dado[] )
+  {
+  for (int i = 1; i<4; i++){
+   var valor = Math.floor( 1 + Math.random() * 6 );
+   valores[i] = valor;
+   dado[i].setAttribute( "src", "face" + valor + ".png" );
+   if (i <= 1){
+			somaUsuario = valores[i] + somaUsuario;
+		}
+		else {
+			somaCpu = valores[i] +somaUsuario;
+		}
+  }
+  } 
+  function rolar()
+  {
+	setImage(dado[]);
+	}
+  
+  window.addEventListener("load", iniciar, false);
+ </script>
+ </head>
+ <body>
+ <form action = "#">
+  <input id = "rolar" type = "button" value = "Jogar">
+ </form>
+ <img id = "dado"  src = "banner.gif">
+
+ </body>
+</html>
